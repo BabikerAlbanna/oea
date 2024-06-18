@@ -1,8 +1,9 @@
-import { rand } from "./Utils.js";
+import { rand } from "./utils.js";
 
 export class Component {
-    constructor(type) {
+    constructor(type, executionMode) {
         this.#type = type;
+        this.#executionMode = executionMode;
     }
 
     #runId = rand();
@@ -10,6 +11,9 @@ export class Component {
 
     #type;
     get type() { return this.#type };
+
+    #executionMode;
+    get executionMode() { return this.#executionMode };
 
     #runStatus = 'began';
     get runStatus() { return this.#runStatus };
@@ -23,10 +27,13 @@ export class Component {
 
 
 export class If extends Component {
-    constructor() {
-        super('If');
+    constructor(executionMode) {
+        super('If', executionMode);
         Object.preventExtensions(this);
     }
+
+    #executionMode;
+    get executionMode() { return this.#executionMode };
 
     #param;
     get param() { return this.#param };

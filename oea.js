@@ -1,4 +1,4 @@
-import { rand } from './Utils.js'
+import { rand } from './utils.js'
 import { Component, If, Equal } from './classes.js'
 
 let grs = new Map();
