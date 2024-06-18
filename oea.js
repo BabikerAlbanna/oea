@@ -1,5 +1,5 @@
 import { rand } from './Utils.js'
-import { Component, If, Equal } from './Classes.js'
+import { Component, If, Equal } from './classes.js'
 
 let grs = new Map();
 
@@ -30,7 +30,6 @@ function _() {
             cur.Run(fn);
         }
     }
-}
 }
 
 
